@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/styleHome.css' />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="./jquery/jqueryHome.js"></script>
+
+</head>
+
+<body ng-app = "homeLogin">
+
+<div class = "container-fluid" >
+    <div class="image" style="background-image: url(../images/twitter_image.png);" >
+        <img id="icon" src="../images/twitter_icon.png" style="width :100px; height: 100px" />
+        <div>
+
+            <form>
+                <button type="button" class = " btn btn-lg pull-right" id = "button1">Log In</button>
+            </form>
+            <form action="/signUp" method="get">
+                <button type="submit" class = "btn btn-lg pull-right" id = "button2" >Sign Up</button>
+            </form>
+
+            <div class = 'overlay popup'>
+                <div id= "wrapper">
+                    <h5 id = "h5">Log in to twitter <a class="close">Close </a></h5>
+                    <hr id="hr">
+                    <img id="twitterIcon" src="https://cdn2.iconfinder.com/data/icons/social-18/512/Twitter-3-32.png" />
+                    <form  ng-controller = "control1">
+                        <p id = "cred1" ng-hide = "cred1">Incorrect username or password</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nameDialog" placeholder="Name" ng-model = "name" required>
+                        </div>
+                        <div class="form-group ">
+                            <input type="password" class="form-control" id="passwordDialog" placeholder="Password"
+                                   ng-model = "password" required>
+                        </div>
+                        <div class="form-group ">
+                            <button type="submit" class="buttonLogin btn" id="buttonDialog"  ng-click = "clickLoginFromDialog()">
+                                Log in</button>
+                        </div>
+                    </form>
+                    <hr id = "hr1">
+                    <h6 id="h6">Don't have an account? <a id="linktoSignUp" href="/signUp">Sign Up >></a></h6>
+                </div>
+            </div>
+</div>
+<div>
+    <h2 class = "h2" align="center">See what's happening right now.</h2>
+    <p class = "p" align = "center">Find community, conversation and inspiration about things you love.</p>
+</div>
+</div>
+</div>
+
+
+<div id = "logInTable" class="col-sm-3 pull-right" ng-controller = "control">
+    <div id="div">
+        <h3 class="whiteText">Log in to your Account</h3>
+        <p id = "cred" ng-hide = "cred">Incorrect username or password</p>
+        <form class = "pull-right">
+            <div class="form-group pull-left">
+                <input type="text" class="form-control" id="name" placeholder="Name" ng-model ="name" required>
+            </div>
+            <div class="form-group pull-left">
+                <input type="password" class="form-control" id="password" placeholder="Password"  ng-model = "password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="buttonLogin btn" ng-click = "clickLogin();">Log in</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src = "javascripts/ClientController.js"></script>
+</body>
+</html>
