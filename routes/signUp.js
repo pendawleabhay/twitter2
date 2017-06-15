@@ -21,7 +21,7 @@ function afterSignUp(req,res)
 {
     var password = req.body.password;
     console.log("------------"+password);
-     password = crypto.createHash("sha1").update(password).digest("HEX");
+     //password = crypto.createHash("sha1").update(password).digest("HEX");
     console.log(password);
     console.log("IN after Sign Up");
     var setUser = "Insert into user_information (First_Name,Last_Name,Email,Password,Gender,Birth_Date,Twitter_Handle,Location) VALUES('" + req.body.firstName + "','" + req.body.lastName + "'," +
